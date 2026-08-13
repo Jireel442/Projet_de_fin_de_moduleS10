@@ -1,0 +1,215 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #141414;
+    color: #ffffff;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #d4a373; 
+}
+header{
+    margin: 0;
+    padding:0% 1.5rem;
+    border: #130924;
+    background-color: #0b5e7d;
+    border-radius: 4.5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+
+   
+}
+
+nav {
+     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+nav .logo {
+    font-weight: 700;
+    color: #130924;
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+h1, h3{
+    text-align: center;
+    color: rgb(247, 247, 252);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
+}
+
+nav li{
+    display: inline-block;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    color: rgb(21, 16, 7);
+    background: transparent;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 160ms ease, transform 120ms ease, box-shadow 160ms ease;
+    outline: none;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+}
+
+nav ul li a:active {
+    transform: translateY(0);
+}
+
+nav ul li a:focus {
+    box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.15);
+}
+
+
+
+#elemt {
+    width: 100%;
+    max-width: 760px;
+    text-align: center;
+}
+
+.elemt h1 {
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    margin: 0 0 1rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.elemt-text {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    line-height: 1.7;
+    margin: 0 auto 2rem;
+    max-width: 42rem;
+    color: rgba(255, 255, 255, 0.94);
+}
+
+.elemt-button {
+    display: inline-block;
+    padding: 0.9rem 1.8rem;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: rgb(13, 0, 88);
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.elemt-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.15);
+}
+.hero{
+    
+    width: 100%;
+    color: rgb(246, 246, 247);
+    padding: 4rem 2rem;
+    border: 1px solid rgb(239, 241, 239);
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    margin-top: 100px;
+    margin-bottom: 35px;
+    background-image: url(image/Heros.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.movie-card {
+    background: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(212, 163, 115, 0.3);
+}
+
+.movie-poster {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.movie-info {
+    padding: 15px;
+}
+
+.movie-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+.rating {
+    background-color: #d4a373;
+    color: #141414;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+.foot{
+    text-align: center;
+    border-top: solide #007af4;
+    padding: 35px;
+}

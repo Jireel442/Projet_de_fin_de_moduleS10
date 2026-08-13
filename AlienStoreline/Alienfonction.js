@@ -12,10 +12,10 @@ async function getProducts() {
 
     const products = await response.json();
         
-        // Cacher le message de chargement
+    // Cacher le message de chargement
     loading.style.display = 'none';
 
-        // 2. Afficher les produits
+    // 2. Afficher les produits
     displayProducts(products);
 
     } catch (error) {
@@ -25,21 +25,21 @@ async function getProducts() {
 }
 function displayProducts(products) {
     products.forEach(product => {
-        // Création de l'élément div pour la carte
+    // Création de l'élément div pour la carte
     const card = document.createElement('div');
     card.className = 'card';
 
-        // Structure interne de la carte
+    // Structure interne de la carte
     card.innerHTML = `
         <img src="${product.image}" alt="${product.title}">
         <h3>${product.title}</h3>
         <p class="price">${product.price.toFixed(2)} €</p>
     `;
 
-        // Ajout dans le conteneur principal
+    // Ajout dans le conteneur principal
     container.appendChild(card);
     });
 }
 
-    // Appeler la fonction au chargement de la page
+// Appeler la fonction au chargement de la page
 getProducts();

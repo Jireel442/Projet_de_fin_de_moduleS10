@@ -9,18 +9,19 @@
 <body>
     <header>
         <nav>
-            <a href="*" class="navbar-brand">
-                <img src="logo/2.png" alt="Logo de l'entreprise" height="40">
+            <a href="*" class="logo">
+                <img src="logo/navb.png" alt="Logo de l'entreprise" height="100">
             </a>
             <ul>
                 <li><a href="#elemt">Home</a></li>
                 <li><a href="#gallery">Products</a></li>
-                <li><a href="*">Contact</a></li>
+                <li><a href="#foot">Contact</a></li>
             </ul>
            <input type="search" id="filtre_article" name="" id="">
         </nav>
     </header>
     <section  class="hero">
+        
         <div id="elemt">
             <h1>Alien Store</h1>
             <p class="elemt-text">Faites vos achats à la manière d'un extra-terrestre sans bouger pour recevoir vos produits.</p>
@@ -33,7 +34,8 @@
         <div class="gallery-header">
             <h2>Nos produits cosmiques :</h2>
             <p>Découvrez une sélection de pièces uniques, confortables et stylées pour un shopping venu d'ailleurs.</p>
-            <select name="liste_art" id="filtre_article">
+           <div class="navigationArt">
+             <select name="liste_art" id="filtre_article">
                 <option value="filtre1">Filtrer par article</option>
                 <option value="filtre1">Basket</option>
                 <option value="1">T-shirt</option>
@@ -42,6 +44,8 @@
                 <option value="1">Pantalon</option>
                 <option value="1">Accessoire</option>
             </select>
+           <input type="search" id="screen" placeholder="Recherche">
+           </div>
         </div>
        <div id="loading">Chargement des produits...</div>
         <div id="products-container" class="products-grid">
@@ -49,7 +53,9 @@
     </section>
 
     <footer>
-
+        <div id="foot" class="foot">
+            @copyright AkieniAcademy||MOUYEDI Salem
+        </div>
     </footer>
 </body>
 <script src="Alienfonction.js"></script>
