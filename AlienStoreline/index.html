@@ -17,7 +17,9 @@
                 <li><a href="#gallery">Products</a></li>
                 <li><a href="#foot">Contact</a></li>
             </ul>
-           <input type="search" id="filtre_article" name="" id="">
+            <button id="cart-toggle" class="cart-toggle" type="button">
+                Panier <span id="cart-count">0</span>
+            </button>
         </nav>
     </header>
     <section  class="hero">
@@ -50,6 +52,19 @@
         </div>
     </section>
 
+    <aside id="cart-panel" class="cart-panel">
+        <div class="cart-header">
+            <h3>Mon panier</h3>
+            <button id="close-cart" type="button" aria-label="Fermer le panier">×</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <p class="empty-cart">Votre panier est vide.</p>
+        </div>
+        <div class="cart-footer">
+            <p>Total : <span id="cart-total">0.00 €</span></p>
+            <button type="button" class="checkout-btn">Valider</button>
+        </div>
+    </aside>
     <footer>
         <div id="foot" class="foot">
             @copyright AkieniAcademy||MOUYEDI Salem

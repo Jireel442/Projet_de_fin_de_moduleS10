@@ -69,7 +69,8 @@ nav li{
     display: inline-block;
 }
 
-nav ul li a {
+nav ul li a,
+.nav-favorites-btn {
     display: inline-block;
     padding: 0.5rem 0.75rem;
     border-radius: 8px;
@@ -80,10 +81,14 @@ nav ul li a {
     text-decoration: none;
     transition: background-color 160ms ease, transform 120ms ease, box-shadow 160ms ease;
     outline: none;
+    border: none;
+    cursor: pointer;
 }
 
 nav ul li a:hover,
-nav ul li a:focus {
+nav ul li a:focus,
+.nav-favorites-btn:hover,
+.nav-favorites-btn:focus {
     background-color: rgba(0,0,0,0.06);
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0,0,0,0.06);
@@ -153,6 +158,25 @@ nav ul li a:focus {
     background-size: cover;
     background-repeat: no-repeat;
 }
+.search-wrap {
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar {
+    width: min(520px, 90vw);
+    padding: 0.9rem 1.2rem;
+    border: none;
+    border-radius: 999px;
+    background: #f5f5f5;
+    color: #141414;
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
 .movies-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -207,7 +231,276 @@ nav ul li a:focus {
     padding: 2px 8px;
     border-radius: 6px;
     font-weight: bold;
+    min-width: 58px;
+    text-align: center;
+    display: inline-block;
 }
+
+.rating-good {
+    background-color: #2ecc71;
+    color: #0b1410;
+}
+
+.rating-medium {
+    background-color: #f39c12;
+    color: #1a1206;
+}
+
+.rating-bad {
+    background-color: #e74c3c;
+    color: #ffffff;
+}
+
+.favorites-section {
+    max-width: 1200px;
+    margin: 40px auto 20px;
+    padding: 20px;
+}
+
+.favorites-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #d4a373;
+    font-size: 2rem;
+}
+
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.favorite-card {
+    background: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+
+.favorite-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.favorite-info {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.favorite-info h3 {
+    font-size: 0.9rem;
+    color: #fff;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.empty-favorites {
+    text-align: center;
+    color: #aaa;
+    grid-column: 1 / -1;
+}
+
+.favorite-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 1.4rem;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.favorite-btn.active {
+    background: #ff4d6d;
+}
+
+.movie-card {
+    position: relative;
+}
+
+.nav-favorites-btn {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.modal-content {
+    position: relative;
+    z-index: 1;
+    width: min(900px, 100%);
+    background: #1d1d1d;
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.modal-poster {
+    width: 260px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.modal-content-text {
+    flex: 1;
+    color: #fff;
+}
+
+.modal-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+#modal-title {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.modal-meta {
+    margin-bottom: 16px;
+}
+
+.modal-content-text p {
+    margin-bottom: 14px;
+    line-height: 1.6;
+    color: #e5e7eb;
+}
+
+.modal-close {
+    position: absolute;
+    right: 14px;
+    top: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: #2d2d2d;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-favorite {
+    position: static;
+    width: 44px;
+    height: 44px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    header {
+        padding: 0.8rem 1rem;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        margin-top: 120px;
+        min-height: 50vh;
+        padding: 2rem 1rem;
+    }
+
+    .movies-grid,
+    .favorites-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .modal-content {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    .modal-poster {
+        width: 100%;
+        max-width: 260px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    #modal-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        height: 70px;
+    }
+
+    nav ul {
+        gap: 0.25rem;
+    }
+
+    nav ul li a,
+    .nav-favorites-btn {
+        padding: 0.45rem 0.6rem;
+        font-size: 0.85rem;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .movie-poster,
+    .favorite-card img {
+        height: 220px;
+    }
+
+    .movie-title {
+        font-size: 0.9rem;
+    }
+
+    .modal {
+        padding: 10px;
+    }
+}
+
 .foot{
     text-align: center;
     border-top: solide #007af4;

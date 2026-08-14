@@ -13,7 +13,8 @@
         </a>
         <ul>
             <li><a href="#elemt">Home</a></li>
-            <li><a href="#movies-container">Products</a></li>
+            <li><a href="#movies-container" id="products-link">Products</a></li>
+            <li><button type="button" id="favorites-nav" class="nav-favorites-btn">Favoris</button></li>
             <li><a href="#foot">Contact</a></li>
            </ul>
     </nav>
@@ -27,7 +28,24 @@
 </section>
 <h1>Films Populaires</h1>
 
+<div class="search-wrap">
+    <input type="search" id="movie-search" class="search-bar" placeholder="Rechercher un film..." aria-label="Rechercher un film">
+</div>
+
 <div id="movies-container" class="movies-grid"></div>
+
+<section id="favorites-section" class="favorites-section">
+    <h2>Mes films favoris</h2>
+    <div id="favorites-container" class="favorites-grid"></div>
+</section>
+
+<div id="movie-modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop" data-close="true"></div>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button type="button" class="modal-close" aria-label="Fermer la modale">×</button>
+        <div id="modal-body"></div>
+    </div>
+</div>
 
 <footer>
         <div id="foot" class="foot">

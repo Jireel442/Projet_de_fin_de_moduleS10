@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Météo</title>
+  <link rel="stylesheet" href="meteostyle.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <header class="top-bar">
+      <img src="logo/logo.jpeg" alt="Logo" class="logo" height="100">
+      <h1>My skybrume</h1>
+      <form id="search-form">
+        <input type="text" id="city-input" placeholder="Rechercher une ville..." required>
+        <button type="submit">Rechercher</button>
+      </form>
+    </header>
+    <section class="hero">
+        <div id="elemt">
+            <h2>Votre meteo n'import où </h2>
+        </div>
+    </section>
+    <div class="history-container">
+      <span>Recherches récentes :</span>
+      <div id="history-tags" class="history-tags"></div>
+    </div>
+
+    <div id="error-message" class="error-message hidden"></div>
+
+    <main class="dashboard-grid">
+      
+      <section class="card widget-current">
+        <div class="card-header">
+          <h2 id="city-name">--</h2>
+          <p id="current-date">--</p>
+        </div>
+        <div class="current-body">
+          <img id="weather-icon" src="" alt="Icône météo" class="weather-icon">
+          <div class="temp-box">
+            <span id="current-temp" class="main-temp">--°C</span>
+            <p id="weather-desc" class="desc">--</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card widget-details">
+        <h3>Détails du jour</h3>
+        <div class="details-grid">
+          <div class="detail-item">
+            <span class="label">Ressenti</span>
+            <span id="feels-like" class="value">--°C</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Humidité</span>
+            <span id="humidity" class="value">--%</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Vent</span>
+            <span id="wind-speed" class="value">-- km/h</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Lever du soleil</span>
+            <span id="sunrise" class="value">--:--</span>
+          </div>
+          <div class="detail-item">
+            <span class="label">Coucher du soleil</span>
+            <span id="sunset" class="value">--:--</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Widget 3: Prévisions sur 5 Jours -->
+      <section class="card widget-forecast">
+        <h3>Prévisions sur 5 Jours</h3>
+        <div id="forecast-container" class="forecast-list"></div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="fonctionmeteo.js"></script>
+</body>
+</html>
